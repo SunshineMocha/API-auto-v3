@@ -1,0 +1,33 @@
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\appsettings.json
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\API Auto v3.0.exe
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\API Auto v3.0.deps.json
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\API Auto v3.0.runtimeconfig.json
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\API Auto v3.0.dll
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\API Auto v3.0.pdb
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Mocha\Desktop\API\API Auto v3.0\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.csproj.AssemblyReference.cache
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.AssemblyInfoInputs.cache
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.AssemblyInfo.cs
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.csproj.CoreCompileInputs.cache
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\staticwebassets\msbuild.API Auto v3.0.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\staticwebassets\msbuild.build.API Auto v3.0.props
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.API Auto v3.0.props
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.API Auto v3.0.props
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\scopedcss\bundle\API Auto v3.0.styles.css
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.csproj.CopyComplete
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.dll
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\refint\API Auto v3.0.dll
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.pdb
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\API Auto v3.0.genruntimeconfig.cache
+C:\Users\Mocha\Desktop\API\API Auto v3.0\obj\Debug\net7.0\ref\API Auto v3.0.dll
