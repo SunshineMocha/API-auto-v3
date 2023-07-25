@@ -47,17 +47,17 @@ namespace API_Auto_v3._0.Controllers
         // POST api/CarDealer/ID
         [HttpPost]
         [Route("{id}")]
-        public string CreateCar(int id, [FromBody] Car car)
+        public IActionResult CreateCar(int id, [FromBody] Car car)
         {
             var carDealer = carDealers.FirstOrDefault(c => c.DealerID == id);
             if (carDealer == null)
             {
-                return "Not Found!";
+                return BadRequest();
             }
 
             carDealer.CarList.Add(car);
 
-            return "Car Added!";
+            return Ok();
         }
 
         // Updating car dealer ID and name
@@ -85,17 +85,14 @@ namespace API_Auto_v3._0.Controllers
             foreach (var carDealer in carDealers)
             {
                 var carToUpdate = carDealer.CarList.FirstOrDefault(car => car.CarPlate == carPlate);
+                if (carToUpdate == null) throw new Exception("La targa non esiste");
 
-                if (carToUpdate != null)
-                {
-                    carToUpdate.CarPlate = updatedCar.CarPlate;
-                    carToUpdate.Model = updatedCar.Model;
-                    carToUpdate.MaxSpeed = updatedCar.MaxSpeed;
-                    carToUpdate.Displacement = updatedCar.Displacement;
-                    return Ok("Car attributes updated successfully.");
-                }
+                carToUpdate.CarPlate = updatedCar.CarPlate;
+                carToUpdate.Model = updatedCar.Model;
+                carToUpdate.MaxSpeed = updatedCar.MaxSpeed;
+                carToUpdate.Displacement = updatedCar.Displacement;
             }
-            return NotFound("Car not found.");
+            return Ok();
         }
 
         // Deleting a car by its plate
