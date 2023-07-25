@@ -13,7 +13,7 @@ namespace API_Auto_v3._0.Controllers
     {
         private static List<CarDealer> carDealers = new List<CarDealer>();
 
-        // GET ALL Car Dealers
+        // Getting ALL the car dealers
         // GET api/CarDealer
         [HttpGet]
         public ActionResult<IEnumerable<CarDealer>> Get()
@@ -21,8 +21,7 @@ namespace API_Auto_v3._0.Controllers
             return carDealers;
         }
 
-
-        // GET Car Dealers by ID
+        // Getting the car dealer by ID
         // GET api/CarDealer/5
         [HttpGet("{id}")]
         public ActionResult<CarDealer> Get(int id)
@@ -35,7 +34,7 @@ namespace API_Auto_v3._0.Controllers
             return carDealer;
         }
 
-        // POST Car Dealer with 1 (or more) cars
+        // Creating a car dealer with one (or more) cars
         // POST api/CarDealer
         [HttpPost]
         public ActionResult<CarDealer> Post(CarDealer carDealer)
@@ -44,13 +43,12 @@ namespace API_Auto_v3._0.Controllers
             return CreatedAtAction(nameof(Get), new { id = carDealer.DealerID }, carDealer);
         }
 
-        // POST Car to an existing Car Dealer
+        // Creating a new car record to an existing car dealer
         // POST api/CarDealer/ID
         [HttpPost]
-        [Route("api/CarDealer/{id}")]
+        [Route("{id}")]
         public string CreateCar(int id, [FromBody] Car car)
         {
-            // Assuming you have a Car Dealer list called "carDealerList"
             var carDealer = carDealers.FirstOrDefault(c => c.DealerID == id);
             if (carDealer == null)
             {
@@ -62,8 +60,7 @@ namespace API_Auto_v3._0.Controllers
             return "Car Added!";
         }
 
-
-        // PUT Updates Car Dealer ID and Name
+        // Updating car dealer ID and name
         // PUT api/CarDealer/5
         [HttpPut]
         public ActionResult<CarDealer> Put(int id, CarDealer updatedCarDealer)
@@ -80,14 +77,13 @@ namespace API_Auto_v3._0.Controllers
             return carDealer;
         }
 
-        // PUT Updates Car Attributes given CarPlate
+        // Update of a single car object
         // PUT api/CarDealer/5/AA000AA
         [HttpPut("{carPlate}")]
         public IActionResult EditCar(string carPlate, [FromBody] Car updatedCar)
         {
             foreach (var carDealer in carDealers)
             {
-                // Find the car with the given car plate in the car dealer's car list
                 var carToUpdate = carDealer.CarList.FirstOrDefault(car => car.CarPlate == carPlate);
 
                 if (carToUpdate != null)
@@ -102,24 +98,22 @@ namespace API_Auto_v3._0.Controllers
             return NotFound("Car not found.");
         }
 
-        // DELETE Car from Car Dealer based on CarPlate
+        // Deleting a car by its plate
         // DELETE api/CarDealer/5
         [HttpDelete("{plate}")]
         public ActionResult Delete(string plate)
         {
             foreach (var carDealer in carDealers)
             {
-                // Find the car with the given car plate in the car dealer's car list
                 var carToRemove = carDealer.CarList.FirstOrDefault(car => car.CarPlate == plate);
 
                 if (carToRemove != null)
                 {
-                    // Remove the car from the car list
                     carDealer.CarList.Remove(carToRemove);
                     return NoContent();
                 }
             }
-            return NotFound();
+            return Ok();
         }
     }
 }
