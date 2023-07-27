@@ -1,11 +1,5 @@
 using API_Auto_v3._0.Models;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using System.Net;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 
 namespace API_Auto_v3._0.Controllers
 {
@@ -71,12 +65,12 @@ namespace API_Auto_v3._0.Controllers
 
                 lines.Add(recordData);
             }
+
             System.IO.File.WriteAllLines(filePath, lines);
         }
 
         // Getting ALL the car dealers
         // GET api/CarDealer
-
         [HttpGet]
         public ActionResult<IEnumerable<CarDealer>> Get()
         {
@@ -113,26 +107,26 @@ namespace API_Auto_v3._0.Controllers
         }
 
         // Creating a new car record to an existing car dealer
-        // POST api/CarDealer/ID
+        // POST api/CarDealer/0
         [HttpPost]
         [Route("{id}")]
         public IActionResult CreateCar(int id, [FromBody] Car car)
         {
             var carDealer = carDealers.FirstOrDefault(c => c.DealerID == id);
+
             if (carDealer == null)
             {
                 return BadRequest();
             }
 
             carDealer.CarList.Add(car);
-            //CODICE PER WRITE FILE
+
             WriteRecords();
-            //FINE CODICE WRITE FILE
             return Ok();
         }
 
         // Update car dealer name
-        // PUT api/CarDealer/5
+        // PUT api/CarDealer?id=5
         [HttpPut]
         public IActionResult EditDealer (int id, [FromBody] CarDealer updatedCarDealer)
         {
@@ -142,20 +136,16 @@ namespace API_Auto_v3._0.Controllers
 
             cardealerToUpdate.DealerName = updatedCarDealer.DealerName;
 
-            //CODICE PER WRITE FILE
             WriteRecords();
-            //FINE CODICE WRITE FILE
             return Ok();
         }
 
         // Update of a single car object
-        // PUT api/CarDealer/5/AA000AA
-
+        // PUT api/CarDealer/AA000AA
         [HttpPut("{carPlate}")]
         public IActionResult EditCar(string carPlate, [FromBody] Car updatedCar)
         {
-            bool carFound = false; // flag to indicate if the car is found and updated
-
+            bool carFound = false; // Indicates if the car is found and updated
             foreach (var carDealer in carDealers)
             {
                 var carToUpdate = carDealer.CarList.FirstOrDefault(car => car.CarPlate == carPlate);
@@ -174,18 +164,15 @@ namespace API_Auto_v3._0.Controllers
 
             if (!carFound)
             {
-                throw new Exception("La targa non esiste"); // Throw an exception if the car is not found
+                throw new Exception("La targa non esiste");
             }
 
-            //CODICE PER WRITE FILE
             WriteRecords();
-            //FINE CODICE WRITE FILE
-
             return Ok();
         }
 
         // Deleting a car by its plate
-        // DELETE api/CarDealer/5
+        // DELETE api/CarDealer/AA000AA
         [HttpDelete("{plate}")]
         public ActionResult Delete(string plate)
         {
@@ -196,12 +183,11 @@ namespace API_Auto_v3._0.Controllers
                 if (carToRemove != null)
                 {
                     carDealer.CarList.Remove(carToRemove);
-                    //CODICE PER WRITE FILE
                     WriteRecords();
-                    //FINE CODICE WRITE FILE
                     return NoContent();
                 }
             }
+
             return Ok();
         }
     }

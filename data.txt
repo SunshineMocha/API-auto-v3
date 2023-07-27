@@ -1,0 +1,8 @@
+1;Hydrogen;AA001AA;Ferrari;193;0
+2;Helium;AA002AA;BMW;193;0;AA003AA;Ford;193;0
+3;Lithium;AA004AA;Lamborghini;193;0;AA005AA;Porsche;193;0
+4;Beryllium;AA006AA;Mercedes;193;0;AA007AA;Fiat;193;0
+5;Boron;BC178AZ;Mercedes;193;0
+6;Carbon;AS789AZ;Ferrari;250;0
+7;Neon;AS234AQ;Fiat;193;0
+8;Naima;PO752PL;Mercedes;193;0
